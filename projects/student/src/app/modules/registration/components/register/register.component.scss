@@ -1,0 +1,91 @@
+@import "~theme/_variables_mixins";
+
+.registration-page {
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.logo {
+  ::ng-deep {
+    img {
+      width: 105px;
+    }
+  }
+}
+
+.registration {
+  background-color: $white-color;
+  &__section {
+    padding: 15px 25px 15px;
+    &__header {
+      border-bottom: 1px solid $mischka-color;
+      padding-bottom: 15px;
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0px;
+        color: $ebony-clay-color;
+      }
+      p {
+        font-size: 0.8rem;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        color: $silver-sand-color;
+        text-transform: uppercase;
+      }
+    }
+    &__social {
+      margin-top: 25px;
+      ::ng-deep {
+        .mat-icon {
+          font-size: 24px;
+          margin-right: 10px;
+        }
+      }
+    }
+    &__or {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      position: relative;
+      &__text {
+        background-color: $white-color;
+        position: relative;
+        z-index: 1;
+        width: 40px;
+        display: inline-block;
+      }
+      &__line {
+        border: 1px solid $wild-sand-color;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        top: 11px;
+      }
+    }
+    &__form {
+      &__submit {
+        margin-top: 20px;
+      }
+      &__terms {
+        p {
+          font-size: 0.9rem;
+        }
+        a {
+          color: $royal-blue-color;
+          text-decoration: underline;
+        }
+      }
+    }
+    &__footer {
+      padding-top: 15px;
+      border-top: 1px solid $mischka-color;
+      font-size: 0.9rem;
+      a {
+        color: $royal-blue-color;
+        margin-left: 8px;
+        font-weight: 500;
+        text-decoration: underline;
+      }
+    }
+  }
+}

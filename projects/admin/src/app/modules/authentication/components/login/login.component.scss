@@ -1,0 +1,51 @@
+@import "~theme/_variables_mixins";
+
+.login-page {
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.logo {
+  ::ng-deep {
+    img {
+      width: 105px;
+    }
+  }
+}
+
+.login {
+  background-color: $white-color;
+  &__section {
+    padding: 15px 25px 15px;
+
+    &__header {
+      padding-bottom: 15px;
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0px;
+        color: $ebony-clay-color;
+      }
+      p {
+        font-size: 0.8rem;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        color: $silver-sand-color;
+        text-transform: uppercase;
+      }
+    }
+    &__form {
+      &__forgot-password {
+        margin-top: 12px;
+        a {
+          font-size: 0.9rem;
+          color: $royal-blue-color;
+          text-decoration: underline;
+        }
+      }
+      &__submit {
+        margin-top: 20px;
+      }
+    }
+  }
+}

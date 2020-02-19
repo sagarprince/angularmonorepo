@@ -1,0 +1,28 @@
+<div class="confirmation-dialog ">
+    <div class="confirmation-dialog__icon confirmation-dialog__icon--{{config.type}}">
+        <ng-container *ngIf="config.iconType == 'fa'; else materialIcon">
+            <mat-icon [fontSet]="config.iconType" [fontIcon]="config.icon"></mat-icon>
+        </ng-container>
+        <ng-template #materialIcon>
+            <mat-icon>{{config.icon}}</mat-icon>
+        </ng-template>
+    </div>
+    <div class="row mt-4 confirmation-dialog__title">
+        <h2 class="col-12">{{config.title}}</h2>
+    </div>
+    <div class="row mt-2 confirmation-dialog__message">
+        <p class="col-12">{{config.message}}</p>
+    </div>
+    <div class="row mt-4">
+        <div class="col-6 offset-sm-2 col-sm-4">
+            <button type="button" mat-raised-button [color]="config.type" (click)="close(true)" tabindex="1">
+                {{config.yesBtnText}}
+            </button>
+        </div>
+        <div class="col-6 col-sm-4">
+            <button type="button" mat-stroked-button (click)="close(false)" tabindex="2">
+                {{config.noBtnText}}
+            </button>
+        </div>
+    </div>
+</div>

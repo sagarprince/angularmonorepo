@@ -1,0 +1,36 @@
+<div class="provide-email-page d-flex flex-column align-items-center justify-content-center">
+    <div class="mb-4 logo">
+        <lms-logo></lms-logo>
+    </div>
+    <div class="provide-email box w-600 mx-auto">
+        <div class="provide-email__section d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="provide-email__section__header">
+                    <h2>Forgot Password</h2>
+                    <p>Please enter your email below</p>
+                </div>
+                <div class="provide-email__section__form">
+                    <form (ngSubmit)="onSubmit(form)" novalidate [formGroup]="form" autocomplete="off">
+                        <div class="row d-flex flex-column justify-content-center align-items-center">
+                            <div class="col-12 col-sm-10">
+                                <app-input type="email" placeholder="Email*" formControlName="email"
+                                    [control]="form.get('email')" autocomplete="off">
+                                </app-input>
+                            </div>
+                        </div>
+                        <div
+                            class="row mt-4 d-flex flex-column justify-content-center align-items-center provide-email__section__form__submit">
+                            <div class="col-12 col-sm-8">
+                                <app-button name="Submit" [disabled]="!form.valid || (isLoading$ | async)"
+                                    [isLoading]="(isLoading$ | async)"></app-button>
+                            </div>
+                            <div class="col-12 text-center provide-email__section__form__sign-in">
+                                <a routerLink="/auth/login">Sign In</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

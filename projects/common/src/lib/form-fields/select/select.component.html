@@ -1,0 +1,13 @@
+<mat-form-field [appearance]="appearance">
+  <mat-label>{{label}}</mat-label>
+  <mat-select [placeholder]="placeholder" [value]="value" [compareWith]="compareItems" [formControl]="control"
+    (selectionChange)="onSelectionChange($event)" [multiple]="multiple ? true : null">
+    <mat-option *ngFor="let option of options" [value]="keyAs == 'object' ? option : option[key]">
+      {{ option[text] }}
+    </mat-option>
+  </mat-select>
+  <mat-error>{{_errors | getErrorMessages: control.errors}}</mat-error>
+  <div class="control-loading" *ngIf="isLoading">
+    <i class="fa fa-spin fa-circle-o-notch"></i>
+  </div>
+</mat-form-field>

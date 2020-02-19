@@ -1,0 +1,22 @@
+query Universities($params: UniversitiesFiltersInput!) {
+  Universities(params: $params) {
+    totalCount
+    entities {
+      id
+      name
+      status
+    }
+  }
+}
+
+mutation AddUniversity($entity: UniversityAddInput!) {
+  AddUniversity(entity: $entity)
+}
+
+mutation UpdateUniversity($entity: UniversityUpdateInput!) {
+  UpdateUniversity(entity: $entity)
+}
+
+mutation DeleteUniversity($id: Float!) {
+  DeleteUniversity(id: $id)
+}

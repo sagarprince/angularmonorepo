@@ -1,0 +1,27 @@
+query Faculties($params: FacultiesFiltersInput!) {
+  Faculties(params: $params) {
+    totalCount
+    entities {
+      id
+      name
+      status
+      university {
+        id
+        name
+        status
+      }
+    }
+  }
+}
+
+mutation AddFaculty($entity: FacultyAddInput!) {
+  AddFaculty(entity: $entity)
+}
+
+mutation UpdateFaculty($entity: FacultyUpdateInput!) {
+  UpdateFaculty(entity: $entity)
+}
+
+mutation DeleteFaculty($id: Float!) {
+  DeleteFaculty(id: $id)
+}

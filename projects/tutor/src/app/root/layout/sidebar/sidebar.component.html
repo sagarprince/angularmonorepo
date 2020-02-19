@@ -1,0 +1,18 @@
+<div class="sidebar-navigation">
+    <div class="sidebar-navigation__menus">
+        <ul>
+            <ng-container *ngFor="let menu of menus">
+                <li [routerLink]="menu.path" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: false }" [attr.title]="menu.title">
+                    <ng-container *ngIf="menu.iconType == 'material-icons'">
+                        <mat-icon>{{menu.icon}}</mat-icon>
+                    </ng-container>
+                    <ng-container *ngIf="menu.iconType == 'fa'">
+                        <mat-icon fontSet="fa" [fontIcon]="menu.icon"></mat-icon>
+                    </ng-container>
+                    <span class="menu-title">{{menu.title}}</span>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>

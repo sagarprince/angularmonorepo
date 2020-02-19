@@ -1,0 +1,50 @@
+<div class="login-page d-flex flex-column align-items-center justify-content-center">
+    <div class="mb-4 logo">
+        <lms-logo></lms-logo>
+    </div>
+    <div class="login box w-400 mx-auto">
+        <div class="login__section">
+            <div class="login__section__header row text-center">
+                <h2 class="col-12">Login</h2>
+                <p class="col-12">Access your account</p>
+            </div>
+            <div class="login__section__social">
+                <app-button name="Continue with Google" color="warn" iconType="fa" icon="fa-google">
+                </app-button>
+            </div>
+            <div class="login__section__or text-center">
+                <span class="login__section__or__text">OR</span>
+                <div class="login__section__or__line"></div>
+            </div>
+            <div class="login__section__form">
+                <form (ngSubmit)="onLogin(loginForm)" novalidate [formGroup]="loginForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-12">
+                            <app-input type="text" label="Email" formControlName="email"
+                                [control]="loginForm.get('email')">
+                            </app-input>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <app-input type="password" label="Password" formControlName="password"
+                                [control]="loginForm.get('password')"></app-input>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-12 col-sm-6 login__section__form__submit">
+                            <app-button name="Log In" [disabled]="(isLoading$ | async)"
+                                [isLoading]="(isLoading$ | async)"></app-button>
+                        </div>
+                        <div class="col-12 text-center login__section__form__forgot-password">
+                            <a href="javascript:void(0)">Forgot password?</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="login__section__footer row mt-4">
+                <div class="col-12 d-flex justify-content-center">
+                    Not yet a tutor? <a href="#/registration">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

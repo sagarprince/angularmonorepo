@@ -1,0 +1,42 @@
+@import "~theme/_variables_mixins";
+
+.verify-otp-page {
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.logo {
+  ::ng-deep {
+    img {
+      width: 105px;
+    }
+  }
+}
+
+.verify-otp {
+  background-color: $white-color;
+  &__section {
+    padding: 30px 0px;
+    text-align: center;
+
+    &__header {
+      h2 {
+        margin-bottom: 0px;
+        font-size: 34px;
+        color: $ebony-clay-color;
+        @media (max-width: 600px) {
+          font-size: 24px;
+        }
+      }
+      p {
+        margin-top: 24px;
+        margin-bottom: 0px;
+        color: $comet-color;
+      }
+    }
+    &__form {
+      margin-top: 60px;
+    }
+  }
+}

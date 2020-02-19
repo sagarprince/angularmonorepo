@@ -1,0 +1,31 @@
+@import "~theme/_variables_mixins";
+
+.layout {
+  &__content {
+    height: calc(100vh - #{$header-height + 1});
+    .mat-drawer-container {
+      background-color: $wild-sand-color;
+      height: 100%;
+    }
+
+    ::ng-deep {
+      .authenticated-page {
+        padding: 30px 30px 30px;
+
+        &__header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h2 {
+            font-size: 1.65rem;
+            color: $ebony-clay-color;
+            margin-bottom: 0px;
+          }
+          button {
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}

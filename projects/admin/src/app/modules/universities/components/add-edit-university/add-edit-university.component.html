@@ -1,0 +1,38 @@
+<div class="add-edit-university add-edit-popup">
+    <div class="add-edit-popup__close-button">
+        <app-button variant="icon-non-fab" type="button" color="primary" icon="close" iconType="material"
+            (onClick)="close()">
+        </app-button>
+    </div>
+    <div class="add-edit-popup__form">
+        <div class="add-edit-popup__form__heading">
+            <h2 *ngIf="mode == 'add'">Add New University</h2>
+            <h2 *ngIf="mode == 'edit'">Edit University</h2>
+        </div>
+        <form (ngSubmit)="onSave(form)" novalidate [formGroup]="form" autocomplete="off">
+            <div class="row">
+                <div class="col-12">
+                    <app-input type="text" label="Name*" formControlName="name" [control]="form.get('name')">
+                    </app-input>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <app-select label="Status" placeholder="Status" formControlName="status"
+                        [control]="form.get('status')" [options]="statusOptions">
+                    </app-select>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-6 col-sm-4">
+                    <app-button [name]="mode == 'add' ? 'Add' : 'Update'" [disabled]="(isLoading$ | async)"
+                        [isLoading]="(isLoading$ | async)">
+                    </app-button>
+                </div>
+                <div class="col-6 col-sm-4">
+                    <app-button type="button" variant="stroked" name="Cancel" (onClick)="close()"></app-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

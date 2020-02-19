@@ -1,0 +1,199 @@
+.to-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.to-message {
+  word-wrap: break-word;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  display: block;
+  color: #ffffff;
+  background-color: transparent;
+
+  a,
+  label {
+    color: #ffffff;
+  }
+  a:hover {
+    color: #ccc;
+    text-decoration: none;
+  }
+}
+
+.toastr-close-button {
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+button.toastr-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.top-center {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.bottom-center {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.top-full-width {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.bottom-full-width {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.top-right {
+  top: 12px;
+  right: 12px;
+}
+
+.bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+
+.bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+
+#toastr-container {
+  position: fixed;
+  z-index: 99999;
+  * {
+    box-sizing: border-box;
+  }
+  > {
+    div {
+      position: relative;
+      overflow: hidden;
+      margin: 10px 0 6px;
+      padding: 25px 15px 20px;
+      width: 345px;
+      border-radius: 0px;
+      background-position: 15px;
+      background-repeat: no-repeat;
+      box-shadow: 0 0 12px #999;
+      opacity: 1;
+      &.toastr-custom {
+        padding: 15px;
+        color: #030303;
+        .toastr-close-button {
+          color: #999 !important;
+        }
+      }
+    }
+  }
+  &.bottom-center > div,
+  &.top-center > div {
+    width: 300px;
+    margin: 10px auto;
+  }
+  &.bottom-full-width > div,
+  &.top-full-width > div {
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.toastr {
+  background-color: #fff;
+}
+
+.toastr-success {
+  background-color: #e2f4ed;
+  .to-title,
+  .to-message,
+  .toastr-close-button {
+    color: #22a471;
+  }
+}
+
+.toastr-error {
+  background-color: #ffdfe4;
+  .to-title,
+  .to-message,
+  .toastr-close-button {
+    color: #af0f3b;
+  }
+}
+
+.toastr-info {
+  background-color: #c5bdf5;
+  .to-title,
+  .to-message,
+  .toastr-close-button {
+    color: #7460ee;
+  }
+}
+
+.toastr-warning {
+  background-color: #f4e4e2;
+  .to-title,
+  .to-message,
+  .toastr-close-button {
+    color: #f15c4a;
+  }
+}
+
+.toastr-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #000;
+  opacity: 0.4;
+}
+
+@media all and (max-width: 240px) {
+  #toastr-container {
+    > div {
+      padding: 20px 15px 15px;
+      width: 11em;
+    }
+  }
+}
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+  #toastr-container {
+    > div {
+      padding: 20px 15px 15px;
+      width: 18em;
+    }
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+  #toastr-container > div {
+    padding: 20px 15px 15px;
+    width: 25em;
+  }
+}

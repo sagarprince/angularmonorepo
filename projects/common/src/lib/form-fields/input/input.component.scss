@@ -1,0 +1,78 @@
+textarea.mat-input-element {
+  resize: none;
+  min-height: 90px;
+}
+
+.mat-datepicker-toggle {
+  position: absolute;
+  right: -10px;
+  top: -18px;
+}
+
+.mat-form-field-should-float {
+  .mat-datepicker-toggle {
+    top: -14px;
+  }
+}
+
+.clear-date-btn {
+  position: absolute;
+  right: 25px;
+  top: -14px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.control-status {
+  position: absolute;
+  top: -24px;
+  right: -14px;
+}
+
+.control-loading-status {
+  font-size: 20px;
+  color: #22a471;
+  right: -14px;
+}
+
+.non-label-field {
+  ::ng-deep {
+    .mat-form-field-infix {
+      padding: 0;
+      border: 0;
+    }
+    .mat-form-field-flex {
+      padding-top: 1.4em;
+      padding-bottom: 1.3em;
+    }
+    .mat-form-field-flex,
+    input {
+      font-size: 16px !important;
+    }
+    .control-status {
+      top: -16px;
+    }
+  }
+}
+
+.password-visibility-icon {
+  position: absolute;
+  top: -6px;
+  right: -20px;
+  left: auto;
+  color: #597084;
+  background-color: #fff;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  &.password-visible {
+    color: #1f2430;
+  }
+  .mat-icon {
+    cursor: pointer;
+  }
+}

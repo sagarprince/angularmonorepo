@@ -1,0 +1,56 @@
+<ng-container [ngSwitch]="variant">
+    <ng-container *ngSwitchCase="'raised'">
+        <button [type]="type" mat-raised-button [color]="color" [disabled]="disabled" (click)="_onClick()">
+            <ng-container *ngIf="isLoading">
+                <mat-icon class="spinner">
+                    <mat-spinner [color]="color" diameter="22">
+                    </mat-spinner>
+                </mat-icon>
+            </ng-container>
+            <ng-container *ngIf="!isLoading && icon != '' && iconType == 'fa'">
+                <mat-icon [fontSet]="iconType" [fontIcon]="icon"></mat-icon>
+            </ng-container>
+            <ng-container *ngIf="!isLoading && icon != '' && iconType == 'material'">
+                <mat-icon>{{icon}}</mat-icon>
+            </ng-container>
+            {{name}}
+        </button>
+    </ng-container>
+    <ng-container *ngSwitchCase="'stroked'">
+        <button [type]="type" mat-stroked-button [disabled]="disabled" (click)="_onClick()">
+            <ng-container *ngIf="isLoading">
+                <mat-icon class="spinner">
+                    <mat-spinner [color]="color" diameter="22">
+                    </mat-spinner>
+                </mat-icon>
+            </ng-container>
+            <ng-container *ngIf="!isLoading && icon != '' && iconType == 'fa'">
+                <mat-icon [fontSet]="iconType" [fontIcon]="icon"></mat-icon>
+            </ng-container>
+            <ng-container *ngIf="!isLoading && icon != '' && iconType == 'material'">
+                <mat-icon>{{icon}}</mat-icon>
+            </ng-container>
+            {{name}}
+        </button>
+    </ng-container>
+    <ng-container *ngSwitchCase="'icon'">
+        <button [type]="type" mat-icon-button mat-mini-fab [color]="color" [disabled]="disabled" (click)="_onClick()">
+            <ng-container *ngIf="iconType == 'fa'; else materialIcon">
+                <mat-icon [fontSet]="iconType" [fontIcon]="icon"></mat-icon>
+            </ng-container>
+            <ng-template #materialIcon>
+                <mat-icon>{{icon}}</mat-icon>
+            </ng-template>
+        </button>
+    </ng-container>
+    <ng-container *ngSwitchCase="'icon-non-fab'">
+        <button [type]="type" mat-icon-button [color]="color" [disabled]="disabled" (click)="_onClick()">
+            <ng-container *ngIf="iconType == 'fa'; else materialIcon">
+                <mat-icon [fontSet]="iconType" [fontIcon]="icon"></mat-icon>
+            </ng-container>
+            <ng-template #materialIcon>
+                <mat-icon>{{icon}}</mat-icon>
+            </ng-template>
+        </button>
+    </ng-container>
+</ng-container>

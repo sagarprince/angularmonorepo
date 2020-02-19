@@ -1,0 +1,13 @@
+<div #toastrContainer id="toastr-container" class="{{position}}">
+  <div *ngFor="let toastr of toastrs" [@inOut]="toastr.config.animate || animate" (@inOut.done)="onAnimationEnd($event)"
+    class="toastr toastr-{{toastr.type}}" (click)="clicked(toastr)">
+    <div *ngIf="toastr.title" class="to-title {{toastr.config.titleClass || titleClass}}">{{toastr.title}}</div>
+    <div [ngSwitch]="toastr.config.enableHTML">
+      <span *ngSwitchCase="true" class="to-message {{toastr.config.messageClass || messageClass}}"
+        [innerHTML]="sanitizer.bypassSecurityTrustHtml(toastr.message)"></span>
+      <span *ngSwitchDefault class="to-message {{toastr.config.messageClass || messageClass}}">{{toastr.message}}</span>
+    </div>
+    <div class="toastr-close-button" *ngIf="toastr.config.showCloseButton" (click)="removeToastr(toastr)">&times;
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.custom-chip-checkbox {
+  border: 1px solid #ced0d5;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0px 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &--selected {
+    background-color: #4540de;
+  }
+  &__icon {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
+  &__name {
+    font-size: 17px;
+    color: #1f2430;
+    text-align: center;
+    &--selected {
+      color: #ffffff;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<mat-form-field [appearance]="appearance" [class.non-label-field]="label === ''">
+    <mat-label *ngIf="label">{{label}}</mat-label>
+    <ng-container [ngSwitch]="mode">
+        <ng-container *ngSwitchCase="'input'">
+            <input matInput [type]="!isPasswordVisible && type == 'password' ? type : inputType"
+                [placeholder]="placeholder" [value]="value" [formControl]="control" (input)="onChange($event)"
+                [readonly]="readonly" [attr.autocomplete]="autocomplete">
+            <div *ngIf="type == 'password'" class="password-visibility-icon"
+                [class.password-visible]="isPasswordVisible" matSuffix>
+                <mat-icon (click)="isPasswordVisible = !isPasswordVisible">
+                    {{!isPasswordVisible ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'textarea'">
+            <textarea matInput [placeholder]="placeholder" [formControl]="control" (input)="onChange($event)"
+                [readonly]="readonly" [attr.autocomplete]="autocomplete">{{value}}</textarea>
+        </ng-container>
+        <ng-container *ngSwitchCase="'datepicker'">
+            <input matInput [type]="type" [matDatepicker]="picker" [placeholder]="placeholder" [value]="value"
+                [formControl]="control" (dateChange)="onChange($event)" (focus)="picker.open()" (click)="picker.open()"
+                [attr.autocomplete]="autocomplete">
+            <button *ngIf="value" type="button" matSuffix mat-icon-button class="clear-date-btn" (click)="clearDate()"
+                title="Clear Date">
+                <mat-icon>close</mat-icon>
+            </button>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </ng-container>
+    </ng-container>
+    <mat-icon matSuffix *ngIf="icon"><i [class]="icon"></i></mat-icon>
+    <mat-error>{{_errors | getErrorMessages: control.errors}}</mat-error>
+    <div class="control-status control-loading-status" *ngIf="isLoading">
+        <i class="fa fa-spin fa-circle-o-notch"></i>
+    </div>
+</mat-form-field>

@@ -1,0 +1,50 @@
+<div class="header">
+    <div class="header__container">
+        <div class="header__container__brand">
+            <button class="basic-button toggle-menu-button" mat-icon-button aria-label="Toggle Menu"
+                (click)="onToggleMenu()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="header__container__brand__logo-name" routerLink="/dashboard">
+                <lms-logo></lms-logo>
+                <span class="header__container__brand__name">
+                    DersBook
+                </span>
+            </div>
+        </div>
+        <div class="header__container__nav">
+            <ul class="header__container__nav__bar">
+                <li class="header__container__nav__bar__menu header__container__nav__bar__menu--nav">
+                    <button type="button" class="basic-button basic-icon-button">
+                        <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                    </button>
+                </li>
+                <li class="header__container__nav__bar__menu header__container__nav__bar__menu--user">
+                    <div class="user-profile" [matMenuTriggerFor]="userMenu">
+                        <div class="user-profile__photo user-profile__photo--default"
+                            style="background-image: url('../../../../assets/img/user-avatar.png')">
+                        </div>
+                        <div class="user-profile__name">
+                            {{userFullName}}
+                            <i class="fa fa-angle-down caret" aria-hidden="true"></i>
+                        </div>
+                        <mat-menu #userMenu="matMenu" class="user-dropdown-menu">
+                            <button mat-menu-item [routerLink]="['/', 'profile', 'edit-profile']">
+                                <mat-icon>perm_identity</mat-icon>
+                                <span>Edit Profile</span>
+                            </button>
+                            <button mat-menu-item [routerLink]="['/', 'profile', 'change-password']">
+                                <mat-icon>lock_open</mat-icon>
+                                <span>Change Password</span>
+                            </button>
+                            <button class="logout-menu" mat-menu-item (click)="onLogout()">
+                                <mat-icon>power_settings_new</mat-icon>
+                                <span>Logout</span>
+                            </button>
+                        </mat-menu>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

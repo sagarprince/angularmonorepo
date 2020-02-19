@@ -1,0 +1,22 @@
+mutation AdminLogin($email: String!, $password: String!) {
+  AdminLogin(args: { email: $email, password: $password }) {
+    accessToken
+    refreshToken
+    user {
+      id
+      email
+      firstName
+      lastName
+      status
+      role
+    }
+  }
+}
+
+mutation UpdateProfile($entity: AdminUpdateInput!) {
+  UpdateAdminUser(entity: $entity)
+}
+
+mutation UpdateAdminPassword($args: ChangePasswordInput!) {
+  UpdateAdminPassword(args: $args)
+}

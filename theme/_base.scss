@@ -1,0 +1,12 @@
+@import "bootstrap";
+@import "variables_mixins";
+@import "animate";
+@import "material";
+@import "common";
+@import "typography";
+@import "utilities";
+
+body {
+  font-family: $primary-font-family !important;
+  background-color: $body-bg-color;
+}

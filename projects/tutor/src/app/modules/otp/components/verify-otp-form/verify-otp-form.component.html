@@ -1,0 +1,28 @@
+<div class="verify-otp-form">
+    <form (ngSubmit)="onVerifyOTP(otpForm)" novalidate [formGroup]="otpForm" autocomplete="off">
+        <div class="row d-flex flex-column justify-content-center align-items-center">
+            <div class="col-12 col-sm-8">
+                <div class="row">
+                    <div class="col-12">
+                        <app-input type="text" placeholder="OTP" formControlName="otp" [control]="otpForm.get('otp')"
+                            autocomplete="off" minLengthErrMessage="OTP must be valid."
+                            maxLengthErrMessage="OTP must be valid.">
+                        </app-input>
+                    </div>
+                    <div class="col-12 text-right verify-otp-form__resend-otp">
+                        <i class="fa fa-circle-o-notch fa-spin" *ngIf="(isResendOTPLoading$ | async)"></i>
+                        <button type="button" [disabled]="(isResendOTPLoading$ | async)" (click)="onResendOTP()">
+                            Resend OTP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 d-flex flex-column justify-content-center align-items-center verify-otp-form__submit">
+            <div class="col-12 col-sm-8">
+                <app-button name="Verify" [disabled]="!otpForm.valid || (isLoading$ | async)"
+                    [isLoading]="(isLoading$ | async)"></app-button>
+            </div>
+        </div>
+    </form>
+</div>

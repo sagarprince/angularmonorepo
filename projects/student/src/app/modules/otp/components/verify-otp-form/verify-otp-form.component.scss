@@ -1,0 +1,44 @@
+@import "~theme/_variables_mixins";
+
+.verify-otp-form {
+  &__resend-otp {
+    i {
+      color: $ebony-clay-color;
+      margin-right: 8px;
+    }
+    button {
+      font-size: 0.9rem;
+      color: $royal-blue-color;
+      text-decoration: underline;
+      background-color: transparent;
+      border: 0 none;
+      padding: 0px;
+      width: auto;
+      height: auto;
+      outline: none;
+      cursor: pointer;
+      &:disabled {
+        color: $iron-color;
+      }
+    }
+  }
+  ::ng-deep {
+    app-input {
+      .mat-form-field-infix {
+        padding: 0;
+        border: 0;
+      }
+      .mat-form-field-flex {
+        padding-top: 2em;
+        padding-bottom: 1.5em;
+      }
+      .mat-form-field-flex,
+      input {
+        text-align: center !important;
+      }
+      input {
+        font-size: 25px !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div class="universities authenticated-page">
+    <div class="universities__header authenticated-page__header">
+        <h2>Universities</h2>
+        <app-button name="Add University" icon="add" iconType="material" (onClick)="onAdd()"></app-button>
+    </div>
+    <div class="universities__filters mt-20">
+        <lms-universities-filters></lms-universities-filters>
+    </div>
+    <div class="universities__content mt-10">
+        <lms-universities-listing></lms-universities-listing>
+    </div>
+</div>

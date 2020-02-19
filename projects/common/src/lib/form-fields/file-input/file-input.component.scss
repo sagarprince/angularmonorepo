@@ -1,0 +1,67 @@
+.file-input {
+  &__box {
+    background-color: #ffffff;
+    border: 1px dashed #dadce1;
+    height: 215px;
+    padding: 0px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &--selected {
+      border-style: solid;
+      border-top: 0 none;
+      border-left: 0 none;
+      border-right: 0 none;
+      border-bottom: 2px solid #4a3ae7;
+    }
+    &--image-preview {
+      padding: 0px;
+      border: 1px solid #dadce1;
+    }
+    &__unselected-view,
+    &__selected-view {
+      width: 100%;
+      text-align: center;
+    }
+    &__plus-icon {
+      margin-bottom: 30px;
+      i {
+        font-size: 40px;
+        color: #4a3ae7;
+      }
+    }
+    &__name {
+      margin-bottom: 0px;
+      font-size: 15px;
+      color: #1f2430;
+    }
+    &__image-preview {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__change-button {
+      position: absolute;
+      top: auto;
+      bottom: 5px;
+      right: 5px;
+      left: auto;
+      ::ng-deep {
+        button {
+          width: 42px;
+          height: 42px;
+        }
+      }
+    }
+  }
+  &__error {
+    color: #f44336;
+    font-size: 75%;
+    margin-top: 5px;
+  }
+}

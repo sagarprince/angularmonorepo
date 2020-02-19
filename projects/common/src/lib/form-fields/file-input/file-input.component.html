@@ -1,0 +1,30 @@
+<div class="file-input">
+    <div class="file-input__box" [class.file-input__box--selected]="value"
+        [class.file-input__box--image-preview]="isImagePreview && value != null">
+        <div class="file-input__box__unselected-view" *ngIf="value === null">
+            <div class="file-input__box__plus-icon"><i class="material-icons">add</i></div>
+            <div class="file-input__box__select-button">
+                <app-button variant="stroked" type="button" name="{{label}}" (onClick)="onSelectFile()"></app-button>
+            </div>
+        </div>
+        <div class="file-input__box__selected-view" *ngIf="!isImagePreview && value !== null">
+            <div class="file-input__box__name">{{fileName}}</div>
+        </div>
+        <div class="file-input__box__image-preview" *ngIf="isImagePreview && value !== null">
+            <img [src]="imageUrl" />
+        </div>
+        <div class="file-input__box__change-button" *ngIf="value !== null">
+            <app-button variant="icon" type="button" color="primary" icon="edit" iconType="material"
+                (onClick)="onSelectFile()"></app-button>
+        </div>
+        <input #fileInput type="file" accept="{{accept}}" (change)="onChange($event)" style="display:none;" />
+    </div>
+    <div *ngIf="control.invalid && (control.dirty || control.touched)" class="file-input__error">
+        <div *ngIf="control.errors.required">
+            Required Field.
+        </div>
+        <div *ngIf="control.errors?.InvalidFileSize">
+            {{invalidFileSizeErrMessage}}
+        </div>
+    </div>
+</div>

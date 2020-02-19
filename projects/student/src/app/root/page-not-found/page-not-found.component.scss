@@ -1,0 +1,14 @@
+@import "../../../../../..//theme/_variables_mixins";
+
+.page-not-found {
+  height: 100vh;
+  text-align: center;
+  &__heading {
+    font-size: 10rem;
+    color: $black-color;
+  }
+  &__message {
+    font-weight: 500;
+    color: $black-color;
+  }
+}

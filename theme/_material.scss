@@ -1,0 +1,236 @@
+@import "variables_mixins";
+
+form {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  font-size: 16px;
+  color: $ebony-clay-color;
+
+  &:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px white inset;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &.mat-button-base {
+    height: 50px;
+  }
+  &.mat-icon-button {
+    height: 42px;
+  }
+  &.mat-raised-button,
+  &.mat-stroked-button {
+    outline: none;
+    border-radius: 0px;
+  }
+  &.mat-stroked-button {
+    background-color: $white-color;
+    border-color: $iron-color !important;
+    color: $ebony-clay-color;
+  }
+  .mat-icon.spinner {
+    margin-right: 8px;
+  }
+}
+
+[type="reset"],
+[type="submit"],
+button,
+html [type="button"] {
+  -webkit-appearance: none;
+}
+
+.basic-button {
+  background-color: transparent;
+  border: 0 none;
+  height: auto;
+}
+
+.mat-form-field {
+  &.mat-form-field-type-mat-input {
+    .mat-form-field-infix {
+      padding: 0.4em 0 0.75em 0;
+      .mat-input-element {
+        line-height: 14px;
+      }
+    }
+    .mat-form-field-flex {
+      background-color: $white-color;
+      border-radius: 0px;
+      border-left: 1px solid $iron-color;
+      border-right: 1px solid $iron-color;
+      border-top: 1px solid $iron-color;
+      padding: 0.9em 1.3em 0 1.3em;
+    }
+    .mat-form-field-underline {
+      &::before {
+        background-color: $iron-color;
+      }
+      .mat-form-field-ripple {
+        display: none;
+      }
+    }
+  }
+  &.mat-form-field-type-mat-select {
+    .mat-form-field-infix {
+      padding: 0.4em 0 0.75em 0;
+    }
+    .mat-form-field-flex {
+      background-color: $white-color;
+      border-radius: 0px;
+      border-left: 1px solid $iron-color;
+      border-right: 1px solid $iron-color;
+      border-top: 1px solid $iron-color;
+      padding: 0.9em 1.3em 0 1.3em;
+    }
+    .mat-form-field-underline {
+      &::before {
+        background-color: $iron-color;
+      }
+      .mat-form-field-ripple {
+        display: none;
+      }
+    }
+    .mat-select-arrow-wrapper {
+      transform: translateY(-120%);
+    }
+    .mat-select-arrow {
+      border: 0 none;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-size: 30px;
+      width: 18px;
+      height: 10px;
+      margin: 0px;
+      &:before {
+        content: "\f107";
+      }
+    }
+  }
+}
+
+.mat-checkbox {
+  .mat-checkbox-frame {
+    border-color: $iron-color;
+    border-width: 1px;
+    border-radius: 4px;
+  }
+}
+
+.mat-slider {
+  width: 100%;
+  &.mat-slider-horizontal {
+    .mat-slider-thumb {
+      bottom: -12px;
+      transform: scale(1) !important;
+      box-shadow: 0 2px 4px 0 rgba(140, 140, 140, 0.3), 0 -2px 4px 0 rgba(140, 140, 140, 0.2);
+      background-color: $white-color;
+    }
+    .mat-slider-track-wrapper {
+      height: 8px;
+      border-radius: 8px;
+    }
+    .mat-slider-track-fill {
+      height: 8px;
+    }
+    .mat-slider-track-background {
+      height: 8px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      background-color: $mercury-color;
+    }
+    .mat-slider-thumb-label {
+      right: -71px;
+      top: -62px;
+      width: 142px;
+      height: 40px;
+      border-radius: 20px !important;
+      box-shadow: 0 10px 27px 0 rgba(0, 0, 0, 0.07);
+      background-color: $white-color;
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid $white-color;
+        position: absolute;
+        bottom: -8px;
+      }
+    }
+    &.cdk-focused {
+      .mat-slider-thumb-label {
+        transform: none;
+      }
+    }
+    .mat-slider-thumb-label-text {
+      transform: none;
+      font-size: 17px;
+      color: $ebony-clay-color;
+    }
+  }
+}
+
+.mat-snack-bar-container {
+  &.snackbar-error {
+    background-color: $red-color;
+  }
+  &.snackbar-success {
+    background-color: $green-color;
+  }
+  .mat-simple-snackbar-action {
+    color: $white-color;
+  }
+}
+
+table {
+  &.mat-table {
+    width: 100%;
+
+    th {
+      &.mat-header-cell {
+        color: $french-gray-color;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+    }
+    tbody {
+      tr {
+        &.mat-row {
+          height: 60px;
+        }
+        td {
+          color: $comet-color;
+          font-size: 0.9rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.mat-paginator {
+  background-color: transparent;
+}

@@ -1,0 +1,138 @@
+@import "~theme/_variables_mixins";
+
+.header {
+  background-color: $white-lilac-color;
+  border-bottom: 1px solid $botticelli-color;
+  &__container {
+    display: flex;
+    height: $header-height;
+    &__brand {
+      width: $sidebar-width;
+      background-color: $white-color;
+      display: flex;
+      align-items: center;
+      padding: 0px 30px;
+      @media (max-width: 600px) {
+        padding-left: 15px;
+      }
+      @media (max-width: 400px) {
+        flex: 1;
+        width: auto;
+      }
+      .toggle-menu-button {
+        width: auto;
+        padding: 0px;
+        height: 35px;
+        margin-right: 20px;
+        .mat-icon {
+          font-size: 35px;
+          width: 35px;
+          height: 35px;
+        }
+      }
+      &__logo-name {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        outline: none;
+      }
+      lms-logo {
+        ::ng-deep {
+          img {
+            width: 40px;
+          }
+        }
+        @media (max-width: 400px) {
+          display: none;
+        }
+      }
+      &__name {
+        font-family: $seconday-font-family;
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-left: 10px;
+        @media (max-width: 600px) {
+          font-size: 1rem;
+        }
+        @media (max-width: 400px) {
+          margin-left: 0px;
+        }
+      }
+    }
+    &__nav {
+      width: calc(100% - #{$sidebar-width});
+      display: flex;
+      justify-content: flex-end;
+      @media (max-width: 400px) {
+        width: auto;
+      }
+      &__bar {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        display: flex;
+        &__menu {
+          border-left: 1px solid $botticelli-color;
+          width: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &--user {
+            width: auto;
+          }
+          .basic-icon-button {
+            font-size: 32px;
+            color: $blue-bayoux-color;
+          }
+          &--nav {
+            @media (max-width: 600px) {
+              display: none;
+            }
+          }
+        }
+        .user-profile {
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          padding-right: 30px;
+          cursor: pointer;
+          @media (max-width: 600px) {
+            padding-right: 15px;
+          }
+          &__photo {
+            width: 42px;
+            height: 42px;
+            background-color: $blue-bayoux-color;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 100%;
+            &--default {
+              background-color: transparent;
+            }
+            @media (max-width: 600px) {
+              display: none;
+            }
+          }
+          &__name {
+            color: $ebony-clay-color;
+            font-size: 16px;
+            font-weight: 500;
+            margin-left: 18px;
+            display: flex;
+            align-items: center;
+            .caret {
+              color: $blue-bayoux-color;
+              font-size: 30px;
+              margin-left: 10px;
+            }
+            @media (max-width: 600px) {
+              margin-left: 0px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

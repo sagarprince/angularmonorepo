@@ -1,0 +1,18 @@
+// Core
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
+@Component({
+  selector: 'lms-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class DashboardComponent implements OnInit {
+  constructor() { }
+
+  /**
+   * ngOnInit
+   * @return void
+   */
+  public ngOnInit(): void { }
+}

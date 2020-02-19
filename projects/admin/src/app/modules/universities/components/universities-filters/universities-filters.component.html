@@ -1,0 +1,18 @@
+<div class="universities-filters filters">
+    <form (ngSubmit)="onSubmit(form)" novalidate [formGroup]="form" autocomplete="off" #filterForm="ngForm">
+        <div class="row">
+            <div class="col-12 filters__heading mb-2">
+                <h3>Filter By:</h3>
+            </div>
+            <div class="col-12 col-sm-7">
+                <app-input type="text" label="Search" formControlName="search" [control]="form.get('search')">
+                </app-input>
+            </div>
+            <div class="col-12 col-sm-5 mt-2 mt-sm-0">
+                <app-select label="Status" placeholder="Status" formControlName="status" [control]="form.get('status')"
+                    [options]="statusOptions" (onChange)="onStatusChange($event)">
+                </app-select>
+            </div>
+        </div>
+    </form>
+</div>

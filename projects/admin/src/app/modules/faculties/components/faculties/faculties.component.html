@@ -1,0 +1,12 @@
+<div class="faculties authenticated-page">
+    <div class="faculties__header authenticated-page__header">
+        <h2>Faculties</h2>
+        <app-button name="Add Faculty" icon="add" iconType="material" (onClick)="onAdd()"></app-button>
+    </div>
+    <div class="faculties__filters mt-20">
+        <lms-faculties-filters></lms-faculties-filters>
+    </div>
+    <div class="faculties__content mt-10">
+        <lms-faculties-listing></lms-faculties-listing>
+    </div>
+</div>

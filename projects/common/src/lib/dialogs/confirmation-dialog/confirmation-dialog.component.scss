@@ -1,0 +1,30 @@
+.confirmation-dialog {
+  width: 370px;
+  padding: 10px 0px;
+  text-align: center;
+  @media (max-width: 576px) {
+    width: auto;
+  }
+  &__icon {
+    &--warn {
+      color: #f44336;
+    }
+    .mat-icon {
+      font-size: 60px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__title {
+    h2 {
+      font-size: 2.1rem;
+    }
+  }
+
+  &__message {
+    p {
+      font-size: 1.08rem;
+    }
+  }
+}
